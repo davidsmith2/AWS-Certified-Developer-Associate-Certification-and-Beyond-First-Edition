@@ -9,4 +9,4 @@ phases:
       - docker push $REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION
       - printf '[{"name":"main","imageUri":"%s"}]' $REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION > taskdef.json
 artifacts:
-  files: taskdef.json
+  files: chapter12/todo-plus-backend/taskdef.json
