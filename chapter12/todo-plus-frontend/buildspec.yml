@@ -3,8 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
+      - cd chapter12/todo-plus-frontend
       - npm i && npm run build
-      # Please change the s3 bucket URI
       - aws s3 cp --recursive dist/ s3://aws-dva-c02-2024-todo-list-bucket/
-      # Please change the distribution id
       - aws cloudfront create-invalidation --distribution-id E3C5DPW420K6R9 --paths "/*"
